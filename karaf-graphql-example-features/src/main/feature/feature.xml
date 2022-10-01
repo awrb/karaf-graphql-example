@@ -40,12 +40,9 @@
         <bundle dependency="true">mvn:com.graphql-java-kickstart/graphql-java-kickstart/14.0.0</bundle>
         <bundle dependency="true">mvn:com.graphql-java-kickstart/graphql-java-servlet/14.0.0</bundle>
 
+        <bundle>mvn:com.github.awrb/karaf-graphql-example-api/${karaf.version}</bundle>
         <bundle>mvn:com.github.awrb/karaf-graphql-example-core/${karaf.version}</bundle>
         <bundle>mvn:com.github.awrb/karaf-graphql-example-scr-servlet/${karaf.version}</bundle>
         <bundle>mvn:com.github.awrb/karaf-graphql-example-commands/${karaf.version}</bundle>
-
-        <bundle>mvn:com.github.awrb/karaf-command-example-api/4.4.1</bundle>
-        <bundle>mvn:com.github.awrb/karaf-command-example-provider/4.4.1</bundle>
-        <bundle>mvn:com.github.awrb/karaf-command-example-command/4.4.1</bundle>
     </feature>
 </features>

@@ -1,19 +1,22 @@
-package com.github.awrb.karaf.graphql.example.core.schema;
+package com.github.awrb.karaf.graphql.example.api;
 
 public class Book {
 
-    private final String id;
     private final String name;
     private final int pageCount;
+    private String id;
 
-    public Book(String id, String name, int pageCount) {
-        this.id = id;
+    public Book(String name, int pageCount) {
         this.name = name;
         this.pageCount = pageCount;
     }
 
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

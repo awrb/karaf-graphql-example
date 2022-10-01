@@ -1,6 +1,6 @@
 package com.github.awrb.karaf.graphql.example;
 
-import com.github.awrb.karaf.graphql.example.core.GraphQLSchemaProvider;
+import com.github.awrb.karaf.graphql.example.api.GraphQLSchemaProvider;
 import graphql.kickstart.servlet.GraphQLConfiguration;
 import graphql.kickstart.servlet.GraphQLHttpServlet;
 import org.osgi.service.component.annotations.Component;

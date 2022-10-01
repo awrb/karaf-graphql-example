@@ -37,7 +37,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.awrb</groupId>
-            <artifactId>karaf-graphql-example-core</artifactId>
+            <artifactId>karaf-graphql-example-api</artifactId>
             <version>${karaf.version}</version>
         </dependency>
     </dependencies>

@@ -1,6 +1,8 @@
 package com.github.awrb.karaf.graphql.example.core;
 
-import com.github.awrb.karaf.graphql.example.core.schema.Book;
+import com.github.awrb.karaf.graphql.example.api.BookRepository;
+import com.github.awrb.karaf.graphql.example.api.GraphQLSchemaProvider;
+import com.github.awrb.karaf.graphql.example.api.Book;
 import graphql.schema.DataFetcher;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
@@ -13,15 +15,16 @@ import org.osgi.service.component.annotations.Reference;
 import java.util.Collection;
 
 @Component(service = GraphQLSchemaProvider.class)
-public class GraphQLSchemaProvider {
+public class BookSchemaProvider implements GraphQLSchemaProvider {
 
     @Reference(service = BookRepository.class)
     private BookRepository bookRepository;
 
-    public void setBookRepository(BookRepository bookRepository) {
+    public void setBookRepository(InMemoryBookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 
+    @Override
     public GraphQLSchema createSchema() {
         SchemaParser schemaParser = new SchemaParser();
         TypeDefinitionRegistry typeDefinitionRegistry = schemaParser.parse(
@@ -41,7 +44,7 @@ public class GraphQLSchemaProvider {
         return environment -> {
             String name = environment.getArgument("name");
             int pageCount = environment.getArgument("pageCount");
-            return bookRepository.createBook(name, pageCount);
+            return bookRepository.storeBook(new Book(name, pageCount));
         };
     }
 

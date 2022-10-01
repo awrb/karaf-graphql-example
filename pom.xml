@@ -76,6 +76,7 @@
         <module>karaf-graphql-example-scr-servlet</module>
         <module>karaf-graphql-example-commands</module>
         <module>karaf-graphql-example-core</module>
+        <module>karaf-graphql-example-api</module>
     </modules>
 
 
