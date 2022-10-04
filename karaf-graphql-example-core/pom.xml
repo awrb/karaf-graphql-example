@@ -12,6 +12,7 @@
     <packaging>bundle</packaging>
 
     <artifactId>karaf-graphql-example-core</artifactId>
+    <name>Karaf GraphQL Example Commands</name>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -44,6 +45,11 @@
         <dependency>
             <groupId>com.graphql-java</groupId>
             <artifactId>graphql-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.reactivex.rxjava3</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>${rxjava.version}</version>
         </dependency>
     </dependencies>
 

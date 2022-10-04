@@ -12,6 +12,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>karaf-graphql-example-features</artifactId>
+    <name>Karaf GraphQL Example Features</name>
 
     <build>
         <resources>

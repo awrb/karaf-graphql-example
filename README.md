@@ -37,9 +37,39 @@ karaf@root()> graphql:query "mutation { addBook(name:\"Lord of the Rings\" pageC
 {addBook={id=9, name=Lord of the Rings}}
 ```
 
-TODOs:
-- add a WebSocket servlet
+Finally, the `karaf-graphql-example-websocket` bundle contains a WebSocket endpoint that will publish updates
+when new data is added via GraphQL. To test, execute the following cURL command:
+```
+curl --include \
+     --no-buffer \
+     --header "Connection: Upgrade" \
+     --header "Upgrade: websocket" \
+     --header "Host: localhost:8181" \
+     --header "Origin: http://localhost:8181/graphql-websocket" \
+     --header "Sec-WebSocket-Key: SGVsbG8sIHdvcmxkIQ==" \
+     --header "Sec-WebSocket-Version: 13" \
+     http://localhost:8181/graphql-websocket
+```
+You should see the following response:
+```
+HTTP/1.1 101 Switching Protocols
+Date: Tue, 04 Oct 2022 21:07:55 GMT
+Connection: Upgrade
+Sec-WebSocket-Accept: qGEgH3En71di5rrssAZTmtRTyFk=
+Upgrade: WebSocket
+
+```
+
+Add a new book by with the GraphQL mutation (either with a POST request or Karaf command):
+```
+karaf@root()> graphql:query "mutation { addBook(name:\"Lord of the Rings\" pageCount:123) { id name }}"                                                                               
+```
+and observe the update come in real time to the terminal with cURL:
+```
+{bookCreated={id=6, name=Lord of the Rings}}
+```
+
+TODOs
 - add examples with more complex schemas
-- add examples for HTTP/WebSocket GraphQL clients (async or not)
-- improve bundle/feature/POM names
+- add examples for GraphQL clients 
 - add itests

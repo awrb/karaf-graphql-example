@@ -1,4 +1,4 @@
-package com.github.awrb.karaf.graphql.example;
+package com.github.awrb.karaf.graphql.example.servlet;
 
 import com.github.awrb.karaf.graphql.example.api.GraphQLSchemaProvider;
 import graphql.kickstart.servlet.GraphQLConfiguration;

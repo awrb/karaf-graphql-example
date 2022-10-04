@@ -1,6 +1,7 @@
 schema {
   query: Query
   mutation: Mutation
+  subscription: Subscription
 }
 
 type Query {
@@ -12,6 +13,10 @@ type Book {
   id: ID
   name: String
   pageCount: Int
+}
+
+type Subscription {
+  bookCreated: Book
 }
 
 type Mutation {

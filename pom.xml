@@ -56,19 +56,27 @@
             <dependency>
                 <groupId>com.graphql-java</groupId>
                 <artifactId>graphql-java</artifactId>
-                <version>19.2</version>
+                <version>${graphql.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.service.component.annotations</artifactId>
-                <version>1.4.0</version>
+                <version>${scr.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
     <properties>
+        <osgi.version>7.0.0</osgi.version>
         <karaf.version>4.4.1</karaf.version>
         <jackson.version>2.13.3</jackson.version>
+        <scr.version>1.4.0</scr.version>
+        <graphql.version>19.2</graphql.version>
+        <jetty.version>9.4.48.v20220622</jetty.version>
+        <graphql.kickstart.version>14.0.0</graphql.kickstart.version>
+        <javax.servlet.api.version>4.0.1</javax.servlet.api.version>
+        <rxjava.version>3.1.5</rxjava.version>
     </properties>
 
     <modules>
@@ -77,6 +85,7 @@
         <module>karaf-graphql-example-commands</module>
         <module>karaf-graphql-example-core</module>
         <module>karaf-graphql-example-api</module>
+        <module>karaf-graphql-example-websocket</module>
     </modules>
 
 

@@ -11,6 +11,7 @@
     <packaging>bundle</packaging>
 
     <artifactId>karaf-graphql-example-api</artifactId>
+    <name>Karaf GraphQL Example API</name>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

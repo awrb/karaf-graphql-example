@@ -6,26 +6,24 @@
         <artifactId>karaf-graphql-example</artifactId>
         <groupId>com.github.awrb</groupId>
         <version>4.4.1</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>bundle</packaging>
+    <name>Karaf GraphQL WebSocket Example</name>
 
-    <artifactId>karaf-graphql-example-commands</artifactId>
-    <name>Karaf GraphQL Example Commands</name>
+    <artifactId>karaf-graphql-example-websocket</artifactId>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.karaf.shell</groupId>
-            <artifactId>org.apache.karaf.shell.core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.graphql-java</groupId>
-            <artifactId>graphql-java</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.service.component.annotations</artifactId>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>websocket-servlet</artifactId>
+            <version>${jetty.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.github.awrb</groupId>
@@ -34,8 +32,8 @@
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
-            <artifactId>osgi.annotation</artifactId>
-            <version>${osgi.version}</version>
+            <artifactId>org.osgi.service.component.annotations</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -44,18 +42,10 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <configuration>
-                    <instructions>
-                        <Karaf-Commands>*</Karaf-Commands>
-                    </instructions>
-                </configuration>
+                <extensions>
+                    true
+                </extensions>
             </plugin>
         </plugins>
     </build>
-
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-    </properties>
-
 </project>
