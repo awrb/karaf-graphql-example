@@ -50,7 +50,7 @@ curl --include \
      --header "Sec-WebSocket-Version: 13" \
      http://localhost:8181/graphql-websocket
 ```
-You should see the following response:
+You should see a similar response:
 ```
 HTTP/1.1 101 Switching Protocols
 Date: Tue, 04 Oct 2022 21:07:55 GMT
